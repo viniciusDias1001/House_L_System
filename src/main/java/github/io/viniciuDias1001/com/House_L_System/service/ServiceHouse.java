@@ -15,22 +15,22 @@ public class ServiceHouse {
         this.houseRepository = houseRepository;
     }
 
-    public House GetHouseByName(String name){
+    public House getHouseByName(String name){
         return houseRepository.findByName(name).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,"House not found"));
     }
 
-    public java.util.List<House> GetHouse(){
+    public java.util.List<House> getHouse(){
         return houseRepository.findAll();
     }
 
-    public House GetHouseByID(Long id){
+    public House getHouseByID(Long id){
        return houseRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,"House not found"));
     }
-    public House SaveHouse(House house){
+    public House saveHouse(House house){
         return houseRepository.save(house);
     }
 
-    public void DeleteHouse(Long id){
+    public void deleteHouse(Long id){
         houseRepository.deleteById(id);
     }
 }
