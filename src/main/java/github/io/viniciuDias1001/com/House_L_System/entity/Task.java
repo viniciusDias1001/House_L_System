@@ -1,5 +1,6 @@
 package github.io.viniciuDias1001.com.House_L_System.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import github.io.viniciuDias1001.com.House_L_System.Enum.TaskStatus;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -8,6 +9,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import java.time.LocalDate;
+
 
 @Entity
 @Getter
@@ -35,5 +38,12 @@ public class Task {
 
     @NotNull
     private TaskStatus taskStatus;
+
+    @Column
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    @NotNull(message = "A data não pode ser nula")
+    private LocalDate dateCrated;
+
+
 
 }
