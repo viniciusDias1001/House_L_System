@@ -1,5 +1,6 @@
 package github.io.viniciuDias1001.com.House_L_System.service;
 
+import github.io.viniciuDias1001.com.House_L_System.Enum.TaskStatus;
 import github.io.viniciuDias1001.com.House_L_System.entity.Task;
 import github.io.viniciuDias1001.com.House_L_System.repository.TaskRepository;
 import jakarta.transaction.Transactional;
@@ -33,6 +34,7 @@ public class ServiceTask {
     @Transactional
     public Task saveTask(Task task){
         task.setDateCrated(LocalDate.now());
+        task.setTaskStatus(TaskStatus.valueOf("PENDING"));
         return taskRepository.save(task);
     }
 

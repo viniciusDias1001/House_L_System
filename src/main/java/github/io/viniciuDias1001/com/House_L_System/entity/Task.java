@@ -45,6 +45,48 @@ public class Task {
     @NotNull(message = "A data não pode ser nula")
     private LocalDate dateCrated;
 
+    public Long getId() {
+        return id;
+    }
 
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Integer getPriority() {
+        return priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
+
+    public TaskStatus getTaskStatus() {
+        return taskStatus;
+    }
+
+    public void setTaskStatus(TaskStatus taskStatus) {
+        this.taskStatus = taskStatus;
+    }
+
+    public LocalDate getDateCrated() {
+        return dateCrated;
+    }
+
+    public void setDateCrated(LocalDate dateCrated) {
+        this.dateCrated = dateCrated;
+    }
 }
