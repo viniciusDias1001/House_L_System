@@ -36,7 +36,6 @@ public class Task {
     @NotNull
     private Integer priority;
 
-    @NotNull
     @Enumerated(EnumType.STRING)
     private TaskStatus taskStatus;
 

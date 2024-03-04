@@ -49,4 +49,5 @@ public class ServiceHouse {
     public void deleteHouse(Long id){
         houseRepository.deleteById(id);
     }
+
 }

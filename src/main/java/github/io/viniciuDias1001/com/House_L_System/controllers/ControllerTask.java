@@ -52,5 +52,11 @@ public class ControllerTask {
         serviceTask.deleteTask(id);
     }
 
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public Task updateTask(@PathVariable Long id, @Valid @RequestBody Task taskDetails){
+        return serviceTask.updateTask(id, taskDetails);
+    }
+
 
 }

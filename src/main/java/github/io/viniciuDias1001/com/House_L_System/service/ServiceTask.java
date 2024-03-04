@@ -43,5 +43,24 @@ public class ServiceTask {
         taskRepository.deleteById(id);
     }
 
-    // and deleteTask
+    @Transactional
+    public Task updateTask(Long id, Task taskDetails) {
+        Task task = taskRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Task not found"));
+
+        if (taskDetails.getName() != null) {
+            task.setName(taskDetails.getName());
+        }
+        if (taskDetails.getDescription() != null) {
+            task.setDescription(taskDetails.getDescription());
+        }
+        if (taskDetails.getPriority() != null) {
+            task.setPriority(taskDetails.getPriority());
+        }
+        if (taskDetails.getTaskStatus() != null) {
+            task.setTaskStatus(taskDetails.getTaskStatus());
+        }
+
+        return taskRepository.save(task);
+    }
 }
