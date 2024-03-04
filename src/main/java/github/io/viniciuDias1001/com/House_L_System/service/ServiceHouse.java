@@ -2,6 +2,7 @@ package github.io.viniciuDias1001.com.House_L_System.service;
 
 import github.io.viniciuDias1001.com.House_L_System.entity.House;
 import github.io.viniciuDias1001.com.House_L_System.repository.HouseRepository;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -26,10 +27,13 @@ public class ServiceHouse {
     public House getHouseByID(Long id){
        return houseRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,"House not found"));
     }
+
+    @Transactional
     public House saveHouse(House house){
         return houseRepository.save(house);
     }
 
+    @Transactional
     public void deleteHouse(Long id){
         houseRepository.deleteById(id);
     }
