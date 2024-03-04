@@ -1,6 +1,7 @@
 package github.io.viniciuDias1001.com.House_L_System.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import jakarta.validation.constraints.NotBlank;
