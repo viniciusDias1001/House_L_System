@@ -40,7 +40,7 @@ public class ControllerTask {
         return serviceTask.getTaskByPriority(priority);
     }
 
-    @GetMapping("/save")
+    @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Task createTask(@Valid @RequestBody Task task){
         return serviceTask.saveTask(task);
