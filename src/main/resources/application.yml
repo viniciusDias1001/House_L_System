@@ -1,3 +1,16 @@
 server:
-  port: 8081
+  port: 8080
 
+  datasource:
+  url: jdbc:h2:mem:testdb
+  driver-class-name: org.h2.Driver
+  username: user
+  password: 200622pmr
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+    ddl-auto: update
