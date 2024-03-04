@@ -12,7 +12,6 @@ public class House {
 
     @Id
     private Long id;
-
     @NotNull
     private Place place;
 }
