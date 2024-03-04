@@ -8,6 +8,7 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +18,8 @@ import java.util.List;
 public class HouseController {
 
     public ServiceHouse serviceHouse;
+
+
 
     public HouseController(ServiceHouse serviceHouse){
         this.serviceHouse = serviceHouse;
@@ -45,19 +48,6 @@ public class HouseController {
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public House createHouse(@Valid @RequestBody House house){
-
-        if (house.getPlaces() != null && !house.getPlaces().isEmpty()) {
-            List<Place> places = new ArrayList<>();
-
-            for (Place placeDTO : house.getPlaces()) {
-                Place place = new Place();
-                place.setName(placeDTO.getName());
-                place.setHouse(house);
-                places.add(place);
-            }
-            house.setPlaces(places);
-        }
-
         return serviceHouse.saveHouse(house);
     }
 
