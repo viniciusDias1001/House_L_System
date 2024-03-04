@@ -28,7 +28,7 @@ public class HouseController {
 
     @GetMapping("{id}")
     @ResponseStatus(HttpStatus.OK)
-    public House getHouseById(@RequestParam Long id){
+    public House getHouseById(@PathVariable Long id){
         return serviceHouse.getHouseByID(id);
     }
 
