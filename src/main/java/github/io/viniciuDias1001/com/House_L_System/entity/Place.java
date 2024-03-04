@@ -10,4 +10,6 @@ import jakarta.validation.constraints.Size;
 public class Place {
 
     private String name;
+
+    public Place {}
 }
