@@ -42,7 +42,6 @@ public class Task {
 
     @Column
     @JsonFormat(pattern = "dd/MM/yyyy")
-    @NotNull(message = "A data não pode ser nula")
     private LocalDate dateCrated;
 
     public Long getId() {
