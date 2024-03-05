@@ -12,10 +12,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
 @Setter
+@Table(name = "User")
 public class User {
 
 
