@@ -54,7 +54,7 @@ public class ControllerTask {
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public Task updateTask(@PathVariable Long id, @Valid @RequestBody Task taskDetails){
+    public Task updateTask(@PathVariable Long id, @RequestBody Task taskDetails){
         return serviceTask.updateTask(id, taskDetails);
     }
 
