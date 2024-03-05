@@ -2,7 +2,7 @@ package github.io.viniciuDias1001.com.House_L_System.Enum;
 
 public enum Gender {
     Male("Male"),
-    DONE("Female");
+    Female("Female");
 
     private String gender;
 
