@@ -11,23 +11,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
+@Entity(name = "app_user")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "User")
 public class User {
-
-
-    /*
-    USUÁRIO POSSUI
-    email
-    nome
-    Password
-    idade(data de nasc)
-    genero
-    */
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

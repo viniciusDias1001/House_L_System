@@ -2,6 +2,7 @@ package github.io.viniciuDias1001.com.House_L_System.controllers;
 
 import github.io.viniciuDias1001.com.House_L_System.entity.User;
 import github.io.viniciuDias1001.com.House_L_System.service.ServiceUser;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,24 +25,24 @@ public class UserController {
     }
 
     @GetMapping("/name")
-    public User getUserByName(String name){
+    public User getUserByName(@RequestParam String name){
         return serviceUser.getUserByName(name);
     }
     @GetMapping("{id}")
     @ResponseStatus(HttpStatus.OK)
-    public User getUserById(Long id){
+    public User getUserById(@PathVariable Long id){
         return serviceUser.getUserById(id);
     }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public User saveUser(User user){
+    public User saveUser(@Valid @RequestBody User user){
         return serviceUser.saveUser(user);
     }
 
     @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteUser(Long id){
+    public void deleteUser(@Valid @PathVariable Long id){
         serviceUser.deleteUser(id);
     }
 
