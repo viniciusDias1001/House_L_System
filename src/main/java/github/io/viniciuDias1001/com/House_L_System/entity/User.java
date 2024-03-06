@@ -24,6 +24,11 @@ public class User {
 
     @NotNull
     @NotBlank
+    @Column(length = 45)
+    private String email;
+
+    @NotNull
+    @NotBlank
     @Column(length = 25)
     private String name;
 
@@ -40,6 +45,14 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     private Gender gender;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public Gender getGender() {
         return gender;

@@ -29,6 +29,10 @@ public class ServiceUser {
         return userRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found"));
     }
 
+    public User getUserByEmaIL(String email){
+        return userRepository.findByEmail(email).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found"));
+    }
+
     @Transactional
     public User saveUser(User user){
         return userRepository.save(user);

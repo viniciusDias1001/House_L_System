@@ -34,6 +34,12 @@ public class UserController {
         return serviceUser.getUserById(id);
     }
 
+    @GetMapping("/email")
+    @ResponseStatus(HttpStatus.OK)
+    public User getUserByEmaIL(@RequestParam String email){
+        return serviceUser.getUserByEmaIL(email);
+    }
+
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public User saveUser(@Valid @RequestBody User user){
