@@ -1,6 +1,12 @@
 server:
   port: 8080
 
+  security:
+    jwt:
+      token:
+        secret-key:53cr37
+        expire-lenght:3600000
+
   datasource:
   url: jdbc:h2:mem:testdb
   driver-class-name: org.h2.Driver
